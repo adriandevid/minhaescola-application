@@ -1,4 +1,4 @@
-import { ThemeModeScript } from "flowbite-react";
+import { Flowbite, ThemeModeScript } from "flowbite-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,12 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ThemeModeScript />
-        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
       </head>
       <body className={inter.className}>
-        {children}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+          {children}
       </body>
     </html>
   );

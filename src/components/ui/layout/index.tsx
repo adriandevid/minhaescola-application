@@ -24,7 +24,7 @@ export default function Layout({ children } : any) {
                             </button>
                             <a href="https://flowbite.com" className="flex ms-2 md:me-24">
                                 <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" />
-                                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
+                                <span className="self-center text-xl text-black font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
                             </a>
                         </div>
                         <div className="flex items-center">
@@ -34,6 +34,7 @@ export default function Layout({ children } : any) {
                                         <span className="sr-only">Open user menu</span>
                                         <Image width={20} height={20} className="w-10 h-10 rounded-full" src="/profile-picture-5.jpg" alt="user photo" />
                                     </button>
+                                    <DarkThemeToggle />
                                     <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
                                         <div className="px-4 py-3">
                                             <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
@@ -54,12 +55,6 @@ export default function Layout({ children } : any) {
                                             </li>
                                         </ul>
                                     </div>
-                                    <button data-collapse-toggle="navbar-user" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
-                                        <span className="sr-only">Open main menu</span>
-                                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -153,8 +148,8 @@ export default function Layout({ children } : any) {
                 </div>
             </aside>
 
-            <div className="p-4 sm:ml-64">
-                <div className="p-4 rounded-lg bg-white mt-14">
+            <div className="p-4 sm:ml-64 bg-gray-50 dark:bg-gray-900 h-full">
+                <div className="p-4 rounded-lg dark:bg-gray-800 bg-white mt-14 shadow-md">
                     {children}
                 </div>
             </div>
