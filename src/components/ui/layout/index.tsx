@@ -7,9 +7,13 @@ import MenuDropdown from "../MenuDropdown";
 import { PiStudent } from "react-icons/pi";
 import { MdClass } from "react-icons/md";
 import { FaChalkboardTeacher } from "react-icons/fa";
+import ToastMessage from '../toast/index';
+import { useContext } from "react";
+import { ContextHook } from "@minhaescola/contexts/ApplicationContext";
 
 
 export default function Layout({ children } : any) {
+    const toastContext = useContext(ContextHook);
     return (
         <>
             <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -150,6 +154,11 @@ export default function Layout({ children } : any) {
 
             <div className="p-4 sm:ml-64 bg-gray-50 dark:bg-gray-900 h-full">
                 <div className="p-4 rounded-lg dark:bg-gray-800 bg-white mt-14 shadow-md">
+                    {
+                        toastContext?.showToast != undefined ?
+                        <ToastMessage typeMessage={toastContext?.showToast.typeToast} message={toastContext?.showToast.message}></ToastMessage>   :
+                        <></>
+                    }
                     {children}
                 </div>
             </div>

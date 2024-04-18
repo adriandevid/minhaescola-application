@@ -2,6 +2,7 @@ import { Flowbite, ThemeModeScript } from "flowbite-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import UseToastContext from "@minhaescola/contexts/ApplicationContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
       </head>
       <body className={inter.className}>
+        <UseToastContext>
           {children}
+        </UseToastContext>
       </body>
     </html>
   );
